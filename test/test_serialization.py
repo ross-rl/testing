@@ -10,5 +10,10 @@ def test_function_deserialization():
 
 
 def test_dict_deserialization():
+    # Test with the actual dict
     add_params = json.dumps({"my_dict": {"inner": ["world"]}})
+    assert ['world', 'hello'] == serialization.test_runloop_serialization(add_params, append_to_dict)
+
+    # Or drop in a string
+    add_params = '{"my_dict": {"inner": ["world"]}}'
     assert ['world', 'hello'] == serialization.test_runloop_serialization(add_params, append_to_dict)
