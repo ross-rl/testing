@@ -16,6 +16,13 @@ def subtract(a: int, b: int) -> int:
     return a - b
 
 
+@runloop.function
+def append_to_dict(my_dict: dict[str, list[str]]) -> list[str]:
+    my_dict["inner"].append("hello")
+    return my_dict["inner"]
+
+
+
 class TestLatch(Latch):
     def __init__(self, fulfillment: FunctionCompleteFulfillmentResult):
         self._fulfillment = fulfillment
